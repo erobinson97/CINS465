@@ -1,0 +1,59 @@
+.black{
+    background: #b82888;
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+.white{
+    background: #dae504;
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+table.chess {
+    border-color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 640px;
+    height: 640px;
+}
+
+h1{
+    text-align: center;
+}
+
+div.side-piece {
+    vertical-align: top;
+    position: absolute;
+    height: 0;
+    overflow: visible;
+    font-size: 12px;
+    left: 2px;
+    font-weight: bold;
+}
+
+div.bottom-piece {
+    vertical-align: bottom;
+    position: absolute;
+    height: 0;
+    overflow: visible;
+    font-size: 12px;
+    right: 2px;
+    font-weight: bold;
+    bottom: 15px;
+}
+
+.piece {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
