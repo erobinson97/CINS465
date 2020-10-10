@@ -14,98 +14,98 @@
 <body>
     {% include "navigation.html" %}
     &nbsp;
-    <h1>CINS 465: Assignment 1 by Ethan Robinson</h1>
+    <h1>CINS 465: Assignment 5 by Ethan Robinson</h1>
     &nbsp;
 
     <div class="container">
         {% autoescape off %}
         <table border="5" class="chess">
             {% for row in rows %}
+            {% if forloop.counter == 0 or forloop.counter == 2 or forloop.counter == 4 or forloop.counter == 6 or forloop.counter == 8 %}
+            <tr>
+                {% for name,value in row.items %}
                 {% if forloop.counter == 0 or forloop.counter == 2 or forloop.counter == 4 or forloop.counter == 6 or forloop.counter == 8 %}
-                    <tr>
-                        {% for name,value in row.items %}
-                            {% if forloop.counter == 0 or forloop.counter == 2 or forloop.counter == 4 or forloop.counter == 6 or forloop.counter == 8 %}
-                                <td class="white">
-                                    <p class="piece" id="{{name}}">
-                                        {{value}}
-                                    </p>
-                                    {% if forloop.parentloop.counter == 8 %}
-                                        <div class="bottom-piece">
-                                            {% if forloop.counter == 2 %}
-                                                B
-                                            {% endif %}
-                                            {% if forloop.counter == 4 %}
-                                                D
-                                            {% endif %}
-                                            {% if forloop.counter == 6 %}
-                                                F
-                                            {% endif %}
-                                            {% if forloop.counter == 8 %}
-                                                H
-                                            {% endif %}
+                <td class="white">
+                    <p class="piece" id="{{name}}">
+                        {{value}}
+                    </p>
+                    {% if forloop.parentloop.counter == 8 %}
+                    <div class="bottom-piece">
+                        {% if forloop.counter == 2 %}
+                        B
+                        {% endif %}
+                        {% if forloop.counter == 4 %}
+                        D
+                        {% endif %}
+                        {% if forloop.counter == 6 %}
+                        F
+                        {% endif %}
+                        {% if forloop.counter == 8 %}
+                        H
+                        {% endif %}
 
-                                        </div>                
-                                    {% endif %}
+                    </div>
+                    {% endif %}
 
-                                </td>
-                            {% else %}
-                                <td class="black">
-                                    {% if forloop.counter == 1 %}
-                                        <div class="side-piece">
-                                            {{forloop.parentloop.counter}}
-                                        </div>                
-                                    {% endif %}
-
-                                    <p class="piece" id="{{name}}">
-                                        {{value}}
-                                    </p>
-
-                                    {% if forloop.parentloop.counter == 8 %}
-                                        <div class="bottom-piece">
-                                            {% if forloop.counter == 1 %}
-                                                A
-                                            {% endif %}
-                                            {% if forloop.counter == 3 %}
-                                                C
-                                            {% endif %}
-                                            {% if forloop.counter == 5 %}
-                                                E
-                                            {% endif %}
-                                            {% if forloop.counter == 7 %}
-                                                G
-                                            {% endif %}
-
-                                        </div>                
-                                    {% endif %}
-                                </td>
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
+                </td>
                 {% else %}
-                    <tr>
-                        {% for name,value in row.items %}
-                            {% if forloop.counter == 0 or forloop.counter == 2 or forloop.counter == 4 or forloop.counter == 6 or forloop.counter == 8 %}
-                                <td class="black">
-                                    <p class="piece" id="{{name}}">
-                                        {{value}}
-                                    </p>
-                                </td>
-                            {% else %}
-                                <td class="white">
-                                    {% if forloop.counter == 1 %}
-                                        <div class="side-piece">
-                                            {{forloop.parentloop.counter}}
-                                        </div>                
-                                    {% endif %}
-                                    <p class="piece" id="{{name}}">
-                                        {{value}}
-                                    </p>
-                                </td>
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
+                <td class="black">
+                    {% if forloop.counter == 1 %}
+                    <div class="side-piece">
+                        {{forloop.parentloop.counter}}
+                    </div>
+                    {% endif %}
 
+                    <p class="piece" id="{{name}}">
+                        {{value}}
+                    </p>
+
+                    {% if forloop.parentloop.counter == 8 %}
+                    <div class="bottom-piece">
+                        {% if forloop.counter == 1 %}
+                        A
+                        {% endif %}
+                        {% if forloop.counter == 3 %}
+                        C
+                        {% endif %}
+                        {% if forloop.counter == 5 %}
+                        E
+                        {% endif %}
+                        {% if forloop.counter == 7 %}
+                        G
+                        {% endif %}
+
+                    </div>
+                    {% endif %}
+                </td>
                 {% endif %}
+                {% endfor %}
+            </tr>
+            {% else %}
+            <tr>
+                {% for name,value in row.items %}
+                {% if forloop.counter == 0 or forloop.counter == 2 or forloop.counter == 4 or forloop.counter == 6 or forloop.counter == 8 %}
+                <td class="black">
+                    <p class="piece" id="{{name}}">
+                        {{value}}
+                    </p>
+                </td>
+                {% else %}
+                <td class="white">
+                    {% if forloop.counter == 1 %}
+                    <div class="side-piece">
+                        {{forloop.parentloop.counter}}
+                    </div>
+                    {% endif %}
+                    <p class="piece" id="{{name}}">
+                        {{value}}
+                    </p>
+                </td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+
+            {% endif %}
 
             {% endfor %}
         </table>
@@ -115,20 +115,22 @@
     &nbsp;
 
     <div class="container">
-        <div class="form-group">
-            <label>Select Chess Piece</label>
-            <input class="form-control" placeholder="Enter Location" id="source">
-        </div>
-        <div class="form-group">
-            <label>Destination Location</label>
-            <input class="form-control" placeholder="Enter Destination" id="destination">
-        </div>
-        <div class="container">
-            <button type="submit" class="btn btn-primary" onclick="submitMove()">Move</button>
-            <button class="btn btn-secondary" onclick="location.reload()">Reset</button>
+        <div class="container row">
+            <div class="form-group container col">
+                <label>Select Chess Piece</label>
+                <input class="form-control" placeholder="Enter Location" id="source">
+            </div>
+            <div class="form-group container col">
+                <label>Destination Location</label>
+                <input class="form-control" placeholder="Enter Destination" id="destination">
+            </div>
+            <div class="container row">
+                <button type="submit" class="btn btn-primary" onclick="submitMove()">Move</button>
+                <button class="btn btn-secondary" onclick="location.reload()">Reset</button>
+            </div>
         </div>
     </div>
-    
+
 </body>
 
 </html>

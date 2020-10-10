@@ -19,5 +19,8 @@ from chess_app import views as chess_app_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', chess_app_views.home, name='home')
+    path('', chess_app_views.home, name='home'),
+    path('history.html', chess_app_views.history, name='history'),
+    path('pieces.html', chess_app_views.pieces, name='pieces'),
+    path('about.html', chess_app_views.about, name='about')
 ]

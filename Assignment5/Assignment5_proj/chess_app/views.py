@@ -20,3 +20,12 @@ def home(request):
     }
 
     return render(request, 'chess_app/home.html', page_data)
+
+def history(request):
+    return render(request, 'chess_app/history.html')
+
+def pieces(request):
+    return render(request, 'chess_app/pieces.html')
+
+def about(request):
+    return render(request, 'chess_app/about.html')

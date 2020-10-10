@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'chess.css' %}">
+    <script type="text/javascript" src="{% static 'chess.js' %}"></script>
+
+    <!--Bootstrap-->
+    {% include "bootstrap.html" %}
+</head>
+<body>
+    {% include "navigation.html" %}
+
+    &nbsp;
+
+    <div class="container">
+        <h1>All about chess</h1>
+        <p>
+            Chess can be traced back over 1500 year ago and it's orgins may never be known.
+            Chess is a two player strategy game that includes a board and two sets of 16 pieces.
+            Each set is either black or white and includes a king, a queen, two rooks, two bishops, two knights
+            and eight pawns. The diagram above shows how the pieces are arranged. Pieces can move to claim spaces occupied 
+            by enemy pieces to remove them from the game. A king cannot be removed from the game unless there is a check mate, which is when
+            all of a kings moves are on squares that can be claimed by the enemy. 
+        </p>
+    </div>
+</body>
+</html>

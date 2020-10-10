@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'chess.css' %}">
+    <script type="text/javascript" src="{% static 'chess.js' %}"></script>
+
+    <!--Bootstrap-->
+    {% include "bootstrap.html" %}
+</head>
+
+<body>
+    {% include "navigation.html" %}
+
+    &nbsp;
+
+    <div class="container">
+        <h1>About Me</h1>
+        &nbsp;
+        &nbsp;
+        <div class="container row">
+            <div class="col">
+                <img src="{% static 'ethansface.jpg' %}" width="80%">
+            </div>
+            <div class="col">
+                <h3>Ethan Robinson</h3>
+                <p>
+                    I have been moving up and down California all my life, but I have spent most of it in Chico. I did
+                    two years of high school here and
+                    graduated in 2015. This is my last semester and I am taking 5 classes. I enjoy working on systems
+                    projects and my capstone project is a
+                    robot that uses AI to keep objects centered on a camera. I like playing video games, roller blading,
+                    and learning new things.
+                </p>
+            </div>
+        </div>
+
+        &nbsp;
+        &nbsp;
+        <div class="container">
+            <h1>Steps to making the chess board:</h1>
+            <ol type="1">
+                <li>
+                    Make a table: <code>table</code> with <code>border="5"</code> and <code>id="chess"</code>.
+                </li>
+                <li>
+                    Within the <code>table</code> create 8 rows using <code>&#60;tr&#62;</code>
+                </li>
+                <li>
+                    Within each <code>&#60;tr&#62;</code> create 8 columns using <code>&#60;td&#62;</code>.
+                </li>
+                <li>
+                    Give each <code>&#60;td&#62;</code> an alternating class of either "black" or "white".
+                </li>
+                <li>
+                    Each <code>&#60;td&#62;</code> is a square and using the classes we can color each square purple and
+                    yellow.
+                </li>
+                <li>
+                    Within each <code>&#60;td&#62;</code> there is a unicode charater for each chess piece.
+                    <ul>
+                        <li>
+                            White King: &#9812
+                        </li>
+                        <li>
+                            Black King: &#9818
+                        </li>
+                        <li>
+                            White Queen: &#9813
+                        </li>
+                        <li>
+                            Black Queen: &#9819
+                        </li>
+                        <li>
+                            White Rook: &#9814
+                        </li>
+                        <li>
+                            Black Rook: &#9820
+                        </li>
+                        <li>
+                            White Bishop: &#9815
+                        </li>
+                        <li>
+                            Black Bishop: &#9821
+                        </li>
+                        <li>
+                            White Knight: &#9816
+                        </li>
+                        <li>
+                            Black Knight: &#9822
+                        </li>
+                        <li>
+                            White Pawn: &#9817
+                        </li>
+                        <li>
+                            Black Pawn: &#9823
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Use CSS to give our table with <code>id="chess"</code> an entierly black border color:
+                    <p class="code">
+                        <code>border-color: #000000;</code>
+                    </p>
+                </li>
+                <li>
+                    Give the table with <code>id="chess"</code> the following to center it on the page.
+                    <p class="code"> <code>margin-left: auto;</code> </p>
+                    <p class="code"> <code>margin-right: auto;</code> </p>
+
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>
